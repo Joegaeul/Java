@@ -1,0 +1,36 @@
+# BufferedReader 와 BufferedWriter 사용법
+
+ex)
+  BufferedRedaer bf = new BufferedReader(new InputStreamRedaer(System.in));
+  String s = bf.readLine();
+  int i = Integer.parseInt(bf.readLine());
+  
+  - readline()은 리턴값을 String으로 고정 따라서 형변환 필요
+  - readLine()은 예외처리 필요 try&catch or throws IOException 통하여 작업 처리
+    cf. throws이용시
+      1. import java.io.IOException;
+      2. public static void main(String[] args)throws IOException{}
+
+ex) StringTokenizer st = new StringTokenizer(s);
+    int a = Integer.parseInt(st.nextToken());
+    int b = Integer.parseInt(st.nextToken());
+    
+    String array[] = s.split(" ");
+    
+    - Read한 데이터를 공백단위로 데이터 가공할려면 작업이 필요
+     1. StringTokenizer, nextToken
+     2. String.split();
+     
+ex) 
+  BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+  String s = "abcdefg";
+  bw.write(s+"\n"); //버퍼에 있는 값 전부 출력
+  bw.flush(); // 남아있는 데이터를 모두 출력
+  bw.close(); // 스트림을 닫음 
+  
+  - 반드시 flush()/ close()를 호출해주어야함 
+  - wirte()는 \n 넣어줘야함
+  
+  
+  
+  
